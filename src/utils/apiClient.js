@@ -3,7 +3,9 @@
  * Interacts with Node.js/Express backend endpoints with automatic fallback
  */
 
-const API_BASE = '/api';
+const RAW_BACKEND = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_BACKEND_URL) || '';
+const BACKEND_URL = RAW_BACKEND.replace(/\/+$/, '');
+const API_BASE = BACKEND_URL ? `${BACKEND_URL}/api` : '/api';
 
 export async function fetchAllBusinesses() {
   try {
