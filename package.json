@@ -11,6 +11,7 @@
     "cap:sync": "vite build && npx cap sync",
     "cap:android": "npx cap add android",
     "electron:start": "electron electron/main.cjs",
+    "start": "node server/index.js",
     "mobile": "npm --prefix mobile start",
     "expo": "npm --prefix mobile start"
   },
