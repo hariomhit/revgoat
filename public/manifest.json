@@ -1,0 +1,47 @@
+{
+  "name": "RevGOAT • AI SEO Review App",
+  "short_name": "RevGOAT",
+  "description": "5-Star AI Google Reviews Generator & Local SEO Ranking Engine",
+  "start_url": "/",
+  "id": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "window-controls-overlay", "minimal-ui"],
+  "background_color": "#090a10",
+  "theme_color": "#6366f1",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "48x48 72x72 96x96 128x128 256x256",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-icon.svg",
+      "sizes": "192x192 384x384 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Generate SEO Reviews",
+      "short_name": "Reviews",
+      "description": "Generate 5-star Google review drafts",
+      "url": "/?step=2",
+      "icons": [{ "src": "/pwa-icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Customer Review History",
+      "short_name": "History",
+      "description": "View saved customer submissions",
+      "url": "/?modal=history",
+      "icons": [{ "src": "/pwa-icon.svg", "sizes": "192x192" }]
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"]
+}

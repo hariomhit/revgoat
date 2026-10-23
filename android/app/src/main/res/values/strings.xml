@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">RevGOAT Reviews</string>
+    <string name="title_activity_main">RevGOAT Reviews</string>
+    <string name="package_name">com.revgoat.reviews</string>
+    <string name="custom_url_scheme">com.revgoat.reviews</string>
+</resources>

@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "RevGOAT Reviews",
+    "slug": "revgoat-reviews",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0a0d14",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0a0d14"
+    },
+    "android": {
+      "package": "com.revgoat.mobile",
+      "adaptiveIcon": {
+        "backgroundColor": "#0a0d14"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.revgoat.mobile",
+      "supportsTablet": true
+    }
+  }
+}

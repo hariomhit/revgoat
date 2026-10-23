@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter QR Standee • Scan to Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0b0f19;
+      color: #0f172a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .standee-card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 440px;
+      border-radius: 24px;
+      padding: 32px 28px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border: 2px solid #e2e8f0;
+    }
+
+    .stars-banner {
+      display: flex;
+      gap: 6px;
+      color: #f59e0b;
+      font-size: 26px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .business-name {
+      font-size: 24px;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .business-meta {
+      font-size: 13px;
+      font-weight: 600;
+      color: #64748b;
+      margin-bottom: 12px;
+    }
+
+    .badge-no-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #16a34a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .scan-callout {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .scan-callout .icon {
+      font-size: 20px;
+    }
+
+    .scan-callout .text {
+      text-align: left;
+    }
+
+    .scan-callout .title {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .scan-callout .sub {
+      display: block;
+      font-size: 11px;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .qr-frame {
+      padding: 12px;
+      background: #ffffff;
+      border: 2px solid #0f172a;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      margin-bottom: 18px;
+    }
+
+    .qr-img {
+      width: 230px;
+      height: 230px;
+      display: block;
+    }
+
+    .three-steps {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-bottom: 18px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .step-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #6366f1;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-text {
+      font-size: 11px;
+      font-weight: 700;
+      color: #334155;
+      text-align: left;
+      line-height: 1.2;
+    }
+
+    .step-arrow {
+      color: #94a3b8;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .footer-brand .brand {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      color: #475569;
+    }
+
+    .footer-brand .tagline {
+      font-size: 9px;
+      font-weight: 700;
+      color: #6366f1;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      max-width: 440px;
+      width: 100%;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    @media print {
+      body {
+        background: transparent !important;
+        padding: 0 !important;
+      }
+      .btn-row {
+        display: none !important;
+      }
+      .standee-card {
+        border: 2px solid #000000 !important;
+        box-shadow: none !important;
+        max-width: 400px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Acrylic Standee Card -->
+  <div class="standee-card">
+    <div class="stars-banner">★★★★★</div>
+    <h1 class="business-name" id="biz-name">Grey Gents clothing store</h1>
+    <p class="business-meta" id="biz-meta">Clothing, Fashion & Boutique</p>
+
+    <div class="badge-no-download">
+      <span>✨ 0 App Download • Instant Mobile Web</span>
+    </div>
+
+    <div class="scan-callout">
+      <span class="icon">📸</span>
+      <div class="text">
+        <span class="title">Scan with Phone Camera or Google Lens</span>
+        <span class="sub">Point phone camera at QR code ➔ Tap link to review</span>
+      </div>
+    </div>
+
+    <div class="qr-frame">
+      <img id="qr-image" src="" alt="Google Review QR Code" class="qr-img">
+    </div>
+
+    <div class="three-steps">
+      <div class="step-item">
+        <div class="step-circle">1</div>
+        <div class="step-text">Scan QR<br><small style="color:#64748b">With Camera</small></div>
+      </div>
+      <span class="step-arrow">➔</span>
+      <div class="step-item">
+        <div class="step-circle">2</div>
+        <div class="step-text">Choose Review<br><small style="color:#64748b">1-Tap Instant</small></div>
+      </div>
+      <span class="step-arrow">➔</span>
+      <div class="step-item">
+        <div class="step-circle">3</div>
+        <div class="step-text">Post to Google<br><small style="color:#64748b">5-Star Rating</small></div>
+      </div>
+    </div>
+
+    <div class="footer-brand">
+      <span class="brand">POWERED BY AI REVIEW AUTOMATION</span>
+      <span class="tagline">AUTOMATIC 5-STAR REVIEWS IN 10 SECONDS</span>
+    </div>
+  </div>
+
+  <!-- Quick Action Buttons -->
+  <div class="btn-row">
+    <button onclick="window.print()" class="btn btn-primary">🖨️ Print Standee</button>
+    <a id="test-app-link" href="/" class="btn btn-secondary">🚀 Open App Directly</a>
+  </div>
+
+  <script>
+    // Read active business from localStorage or fallback
+    let bizName = "Grey Gents clothing store";
+    let bizMeta = "Clothing, Fashion & Boutique";
+    let targetUrl = "https://revgoat-business-pro.vercel.app/";
+
+    try {
+      const stored = localStorage.getItem('revgoat_locked_business_profile');
+      if (stored) {
+        const obj = JSON.parse(stored);
+        if (obj && obj.name) {
+          bizName = obj.name;
+          bizMeta = (obj.category || 'Local Business') + (obj.city ? ' • 📍 ' + obj.city : '');
+        }
+      }
+    } catch(e) {}
+
+    document.getElementById('biz-name').textContent = bizName;
+    document.getElementById('biz-meta').textContent = bizMeta;
+
+    // Use current origin or live domain
+    let baseUrl = window.location.origin;
+    if (baseUrl.includes('localhost') || baseUrl.includes('127.0.0.1')) {
+      baseUrl = 'https://revgoat-business-pro.vercel.app';
+    }
+    targetUrl = baseUrl + '/?b=client_direct';
+
+    document.getElementById('test-app-link').href = baseUrl + '/';
+
+    // Set QR code src
+    const qrSrc = "https://api.qrserver.com/v1/create-qr-code/?size=480x480&data=" + encodeURIComponent(targetUrl) + "&margin=15";
+    document.getElementById('qr-image').src = qrSrc;
+  </script>
+</body>
+</html>

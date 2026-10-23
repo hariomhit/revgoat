@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>RevGOAT Mobile • Quick Client Onboarding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #090d16;
+      color: #f1f5f9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      padding-bottom: 40px;
+    }
+
+    /* Top Header */
+    .top-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 900;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+    }
+    .brand-info h1 {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: #ffffff;
+      line-height: 1.1;
+    }
+    .brand-info p {
+      font-size: 11px;
+      color: #94a3b8;
+      font-weight: 600;
+    }
+    .pill-badge {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    /* Quick Guide Banner */
+    .guide-banner {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 16px;
+    }
+    .guide-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    .guide-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #fbbf24;
+    }
+    .guide-toggle {
+      font-size: 12px;
+      color: #94a3b8;
+      font-weight: 600;
+    }
+    .guide-body {
+      display: none;
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 12px;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+    .guide-body.show {
+      display: block;
+    }
+    .guide-step {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .guide-num {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #f59e0b;
+      color: #000;
+      font-size: 11px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Main Form Card */
+    .form-card {
+      background: #111827;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 18px 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .form-section-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #f8fafc;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .input-group {
+      margin-bottom: 14px;
+    }
+    .input-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #94a3b8;
+      margin-bottom: 6px;
+    }
+    .input-field {
+      width: 100%;
+      background: #1e293b;
+      border: 1.5px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 14px;
+      font-family: inherit;
+      color: #ffffff;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+    .input-field:focus {
+      border-color: #10b981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    }
+    .input-with-button {
+      display: flex;
+      gap: 8px;
+    }
+    .btn-paste {
+      background: #334155;
+      color: #f1f5f9;
+      border: none;
+      border-radius: 12px;
+      padding: 0 14px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+    .btn-paste:active {
+      transform: scale(0.96);
+    }
+
+    /* Category Quick Select */
+    .categories-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .cat-chip {
+      background: #1e293b;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .cat-chip.selected {
+      background: #10b981;
+      color: #ffffff;
+      border-color: #10b981;
+      font-weight: 700;
+    }
+
+    /* Submit Button */
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 14px;
+      padding: 15px;
+      font-size: 15px;
+      font-weight: 800;
+      font-family: inherit;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-submit:active {
+      transform: scale(0.98);
+      filter: brightness(0.95);
+    }
+
+    /* Result Card */
+    .result-card {
+      display: none;
+      margin-top: 20px;
+      background: #111827;
+      border: 2px solid #10b981;
+      border-radius: 20px;
+      padding: 20px 16px;
+      text-align: center;
+      animation: popIn 0.3s ease;
+    }
+    .result-card.show {
+      display: block;
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .result-header {
+      font-size: 16px;
+      font-weight: 800;
+      color: #34d399;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .result-sub {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-bottom: 16px;
+    }
+    .qr-container {
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 16px;
+      display: inline-block;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .qr-image {
+      width: 220px;
+      height: 220px;
+      display: block;
+    }
+
+    /* Action Buttons in Result */
+    .action-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .btn-action {
+      background: #1e293b;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 12px 8px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+    .btn-action.whatsapp {
+      background: #25d366;
+      color: #000000;
+      border: none;
+      font-weight: 800;
+      grid-column: span 2;
+      padding: 14px;
+      font-size: 14px;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+    }
+    .btn-action:active {
+      transform: scale(0.97);
+    }
+
+    /* Saved Clients List */
+    .saved-list-card {
+      margin-top: 24px;
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .saved-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .saved-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .client-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #1e293b;
+      padding: 10px 12px;
+      border-radius: 10px;
+      margin-bottom: 6px;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    .client-item:active {
+      border-color: #10b981;
+    }
+    .client-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+    .client-meta {
+      font-size: 11px;
+      color: #64748b;
+    }
+    .client-arrow {
+      color: #10b981;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #10b981;
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      z-index: 9999;
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header class="top-header">
+    <div class="brand-wrap">
+      <div class="brand-logo">R</div>
+      <div class="brand-info">
+        <h1>RevGOAT Mobile</h1>
+        <p>1-Tap Client Onboarding</p>
+      </div>
+    </div>
+    <span class="pill-badge">Zero Laptop</span>
+  </header>
+
+  <!-- Main Quick Entry Form -->
+  <main class="form-card">
+    <div class="form-section-title">
+      <span>✨</span> Naye Client ki Details Bharein
+    </div>
+
+    <!-- Business Name -->
+    <div class="input-group">
+      <label class="input-label" for="bizName">Dukaan / Clinic ka Naam *</label>
+      <input type="text" id="bizName" class="input-field" placeholder="e.g. Radhe Automobiles, Dr. Mehta Clinic" required>
+    </div>
+
+    <!-- City / Area -->
+    <div class="input-group">
+      <label class="input-label" for="bizCity">City ya Area</label>
+      <input type="text" id="bizCity" class="input-field" placeholder="e.g. Maninagar, Ahmedabad">
+    </div>
+
+    <!-- Client Phone -->
+    <div class="input-group">
+      <label class="input-label" for="bizPhone">Client ka WhatsApp Number</label>
+      <input type="tel" id="bizPhone" class="input-field" placeholder="e.g. 9876543210">
+    </div>
+
+    <!-- Category -->
+    <div class="input-group">
+      <label class="input-label">Business Category</label>
+      <div class="categories-wrap" id="categoryChips">
+        <div class="cat-chip selected" onclick="selectCat(this, 'Retail, Grocery & Supermarket')">🛒 Kirana / Retail</div>
+        <div class="cat-chip" onclick="selectCat(this, 'Clinic, Doctor & Dental Hospital')">🏥 Clinic / Doctor</div>
+        <div class="cat-chip" onclick="selectCat(this, 'Restaurant, Cafe & Fast Food')">🍔 Restaurant / Cafe</div>
+        <div class="cat-chip" onclick="selectCat(this, 'Salon, Spa & Beauty Care')">💇 Salon / Spa</div>
+        <div class="cat-chip" onclick="selectCat(this, 'Automobile, Garage & Tyres')">🚗 Automobile</div>
+        <div class="cat-chip" onclick="selectCat(this, 'Clothing, Fashion & Boutique')">👗 Clothing / Boutique</div>
+      </div>
+      <input type="hidden" id="bizCategory" value="Retail, Grocery & Supermarket">
+    </div>
+
+    <!-- Google Review Link -->
+    <div class="input-group">
+      <label class="input-label" for="bizReviewUrl">Google Review Link / Place ID *</label>
+      <div class="input-with-button">
+        <input type="url" id="bizReviewUrl" class="input-field" placeholder="https://g.page/r/... ya Place ID">
+        <button type="button" class="btn-paste" onclick="pasteReviewLink()">📋 Paste</button>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="button" class="btn-submit" onclick="generateProfile()">
+      ⚡ QR Code & Profile Generate Karein
+    </button>
+  </main>
+
+  <!-- Generated Result Card -->
+  <section class="result-card" id="resultCard">
+    <div class="result-header">
+      <span>🎉</span> Client Profile Ready!
+    </div>
+    <div class="result-sub" id="resultBizName">Business Name</div>
+
+    <!-- Live QR Image -->
+    <div class="qr-container">
+      <img id="qrImage" class="qr-image" alt="Client Review QR Code" src="">
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-grid">
+      <a href="#" id="btnWhatsapp" target="_blank" class="btn-action whatsapp">
+        📲 WhatsApp par Share Karein
+      </a>
+      <button type="button" class="btn-action" onclick="copyShareLink()">
+        📋 Copy Link
+      </button>
+      <a href="/standee.html" id="btnStandee" target="_blank" class="btn-action">
+        🖨️ Standee Card
+      </a>
+    </div>
+  </section>
+
+  <!-- Saved Clients Directory -->
+  <section class="saved-list-card" id="savedClientsSection">
+    <div class="saved-header">
+      <div class="saved-title">📱 Saved Clients (Phone Me)</div>
+      <span class="pill-badge" id="clientCountBadge">0 Clients</span>
+    </div>
+    <div id="savedClientsList">
+      <!-- Injected dynamically -->
+    </div>
+  </section>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">Saved Successfully!</div>
+
+  <script>
+    const ALL_CLIENTS_KEY = 'revgoat_all_client_profiles';
+    const ACTIVE_PROFILE_KEY = 'revgoat_locked_business_profile';
+
+    let currentGeneratedUrl = '';
+    let currentBusiness = null;
+
+    // Select category chip
+    function selectCat(el, val) {
+      document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      document.getElementById('bizCategory').value = val;
+    }
+
+    // Paste clipboard helper
+    async function pasteReviewLink() {
+      try {
+        const text = await navigator.clipboard.readText();
+        if (text && text.trim()) {
+          document.getElementById('bizReviewUrl').value = text.trim();
+          showToast('Link Pasted! 📋');
+        }
+      } catch (err) {
+        showToast('Clipboard access allow karein');
+      }
+    }
+
+    // Helper: Generate clean slug
+    function generateSlug(name) {
+      return (name || 'client')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '') + '-' + Date.now().toString(36).substr(-4);
+    }
+
+    // Generate Profile & QR
+    function generateProfile() {
+      const name = document.getElementById('bizName').value.trim();
+      const city = document.getElementById('bizCity').value.trim();
+      const phone = document.getElementById('bizPhone').value.trim();
+      const category = document.getElementById('bizCategory').value;
+      let reviewUrl = document.getElementById('bizReviewUrl').value.trim();
+
+      if (!name) {
+        showToast('Kripya Dukaan ka Naam likhein!');
+        document.getElementById('bizName').focus();
+        return;
+      }
+
+      // If user pasted Place ID, convert to official Google Write Review URL
+      if (reviewUrl.startsWith('ChIJ') || reviewUrl.length > 20 && !reviewUrl.startsWith('http')) {
+        reviewUrl = `https://search.google.com/local/writereview?placeid=${encodeURIComponent(reviewUrl)}`;
+      } else if (!reviewUrl) {
+        // Fallback search URL
+        reviewUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + ' ' + city)}`;
+      }
+
+      const slug = generateSlug(name);
+      const businessObj = {
+        id: slug,
+        slug: slug,
+        name: name,
+        city: city || 'Local Area',
+        phone: phone,
+        category: category,
+        googleReviewUrl: reviewUrl,
+        rating: 5.0,
+        createdAt: Date.now()
+      };
+
+      currentBusiness = businessObj;
+
+      // Save into browser localStorage so it syncs with RevGOAT
+      saveClient(businessObj);
+
+      // Direct Google Review URL for QR Code (Always 100% works without any server!)
+      const targetUrl = reviewUrl;
+      currentGeneratedUrl = targetUrl;
+
+      // Update QR Code image (420x420 clean image)
+      const qrApi = `https://api.qrserver.com/v1/create-qr-code/?size=420x420&data=${encodeURIComponent(targetUrl)}&margin=12`;
+      document.getElementById('qrImage').src = qrApi;
+      document.getElementById('resultBizName').innerText = `${name} (${city || 'Local Area'})`;
+
+      // Setup WhatsApp button
+      const waText = encodeURIComponent(
+        `Namaste ${name}! 🙏\n\nAapka official Google Review Link aur QR Code tayar hai:\n\n⭐ Review Link: ${targetUrl}\n\nIs link ko apne sabhi customers ko WhatsApp par share karein aur 5-Star reviews paayein!`
+      );
+      const waUrl = phone
+        ? `https://wa.me/91${phone.replace(/[^0-9]/g, '').slice(-10)}?text=${waText}`
+        : `https://wa.me/?text=${waText}`;
+      document.getElementById('btnWhatsapp').href = waUrl;
+
+      // Show Result Card
+      const resCard = document.getElementById('resultCard');
+      resCard.classList.add('show');
+      resCard.scrollIntoView({ behavior: 'smooth' });
+
+      showToast('Client Profile Saved! 🎉');
+      renderSavedClients();
+    }
+
+    // Save Client in LocalStorage
+    function saveClient(client) {
+      try {
+        let clients = JSON.parse(localStorage.getItem(ALL_CLIENTS_KEY) || '[]');
+        clients = clients.filter(c => c.slug !== client.slug && c.name.toLowerCase() !== client.name.toLowerCase());
+        clients.unshift(client);
+        localStorage.setItem(ALL_CLIENTS_KEY, JSON.stringify(clients));
+        localStorage.setItem(ACTIVE_PROFILE_KEY, JSON.stringify(client));
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    // Copy Share Link
+    function copyShareLink() {
+      if (!currentGeneratedUrl) return;
+      navigator.clipboard.writeText(currentGeneratedUrl).then(() => {
+        showToast('Review Link Copied! 📋');
+      });
+    }
+
+    // Render Saved Clients
+    function renderSavedClients() {
+      const container = document.getElementById('savedClientsList');
+      const badge = document.getElementById('clientCountBadge');
+      try {
+        const clients = JSON.parse(localStorage.getItem(ALL_CLIENTS_KEY) || '[]');
+        badge.innerText = `${clients.length} Clients`;
+
+        if (clients.length === 0) {
+          container.innerHTML = '<div style="color: #64748b; font-size: 12px; text-align: center; padding: 12px;">Abhi koi client save nahi hai</div>';
+          return;
+        }
+
+        container.innerHTML = clients.slice(0, 10).map(c => `
+          <div class="client-item" onclick="loadClient('${c.slug}')">
+            <div>
+              <div class="client-name">${c.name}</div>
+              <div class="client-meta">${c.city || 'City'} • ${c.category ? c.category.split(',')[0] : 'Business'}</div>
+            </div>
+            <div class="client-arrow">➔</div>
+          </div>
+        `).join('');
+      } catch (e) {
+        container.innerHTML = '';
+      }
+    }
+
+    // Load an existing client into form
+    function loadClient(slug) {
+      try {
+        const clients = JSON.parse(localStorage.getItem(ALL_CLIENTS_KEY) || '[]');
+        const found = clients.find(c => c.slug === slug);
+        if (found) {
+          document.getElementById('bizName').value = found.name || '';
+          document.getElementById('bizCity').value = found.city || '';
+          document.getElementById('bizPhone').value = found.phone || '';
+          document.getElementById('bizReviewUrl').value = found.googleReviewUrl || '';
+          generateProfile();
+          showToast(`Loaded ${found.name}`);
+        }
+      } catch (e) {}
+    }
+
+    // Toast helper
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.innerText = msg;
+      t.classList.add('show');
+      setTimeout(() => {
+        t.classList.remove('show');
+      }, 2500);
+    }
+
+    // On Load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderSavedClients();
+    });
+  </script>
+</body>
+</html>

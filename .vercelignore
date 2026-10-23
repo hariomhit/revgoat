@@ -1,0 +1,8 @@
+node_modules
+.git
+android
+RevGOAT-App.apk
+electron
+build-apk.bat
+capacitor.config.json
+mobile

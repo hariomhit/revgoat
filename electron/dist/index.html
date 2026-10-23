@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+    <title>RevGOAT • AI SEO Review Generator & Google Publisher</title>
+    <meta name="description" content="Generate 5-star SEO-friendly Google reviews in seconds. 1-click auto copy and open Google review page." />
+    <!-- PWA & Mobile App Support -->
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="RevGOAT" />
+    <link rel="apple-touch-icon" href="./pwa-icon.svg" />
+    <link rel="apple-touch-icon" sizes="192x192" href="./pwa-icon.svg" />
+
+    <!-- Performance Preconnect & DNS Prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.qrserver.com">
+    <link rel="dns-prefetch" href="https://api.qrserver.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="./assets/index-BSTtAsas.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/vendor-cxkclgJA.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-BrdmPRFp.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(regs) {
+          for (var r of regs) { r.unregister(); }
+        }).catch(function() {});
+      }
+      if ('caches' in window) {
+        caches.keys().then(function(keys) {
+          keys.forEach(function(k) { caches.delete(k); });
+        }).catch(function() {});
+      }
+    </script>
+  </body>
+</html>

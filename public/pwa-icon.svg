@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="goatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="goldStar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#8b5cf6" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <!-- Background rounded squircle for mobile app icon -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+  <rect width="504" height="504" x="4" y="4" rx="108" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8" />
+
+  <!-- Shield Hexagon Emblem with Glow -->
+  <g filter="url(#glow)">
+    <path
+      d="M256 50 L420 120 V260 C420 365 340 440 256 465 C172 440 92 365 92 260 V120 L256 50 Z"
+      fill="url(#goatGrad)"
+    />
+    <!-- Inner Dark Core -->
+    <path
+      d="M256 80 L390 135 V255 C390 338 325 400 256 425 C187 400 122 338 122 255 V135 L256 80 Z"
+      fill="#090a10"
+    />
+    <!-- Stylized GOAT Horns -->
+    <path
+      d="M175 180 C150 145 200 125 225 160 L256 205 L287 160 C312 125 362 145 337 180 C302 230 256 295 256 295 C256 295 210 230 175 180 Z"
+      fill="url(#goatGrad)"
+    />
+    <!-- 5-Star Sparkle -->
+    <polygon
+      points="256,220 274,270 324,270 284,298 299,348 256,316 213,348 228,298 188,270 238,270"
+      fill="url(#goldStar)"
+    />
+  </g>
+</svg>

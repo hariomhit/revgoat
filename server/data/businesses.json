@@ -1,0 +1,224 @@
+[
+  {
+    "businessId": "masala-maarke-restaurant-and-banquet",
+    "businessName": "Masala Maarke Restaurant And Banquet",
+    "city": "Sola, Ahmedabad, Gujarat",
+    "category": "Cafe & Restaurant",
+    "googleReviewUrl": "https://search.google.com/local/writereview?placeid=0x395e9d2ad937eecf:0x2b28cdf25b24295d",
+    "shortUrl": "https://revgoa.in/r/masala-maarke-restaurant-and-banquet",
+    "analytics": {
+      "scansCount": 0,
+      "positiveClicksCount": 0,
+      "negativeSubmissionsCount": 0
+    },
+    "adminPasswordHash": "0ae7fb5f61f2ce9c491c0ef39a7d21d0de42749714dc9f496beaa76d69caa09a",
+    "feedbackLog": [],
+    "services": [
+      "North Indian Cuisine",
+      "Banquet Facilities",
+      "Family Dining",
+      "Party Hall & Events",
+      "Home Delivery & Takeaway"
+    ],
+    "rating": 5,
+    "reviewCount": 100,
+    "placeId": "",
+    "createdAt": "2026-10-22T18:32:27.463Z",
+    "updatedAt": "2026-10-22T18:32:58.997Z"
+  },
+  {
+    "businessId": "cafe-piano",
+    "businessName": "Cafe Piano",
+    "city": "Bodakdev, Ahmedabad, Gujarat",
+    "category": "Cafe & Restaurant",
+    "googleReviewUrl": "https://maps.app.goo.gl/zdw5n6HqThGX81no6?g_st=aw",
+    "shortUrl": "https://revgoa.in/r/cafe-piano",
+    "analytics": {
+      "scansCount": 0,
+      "positiveClicksCount": 0,
+      "negativeSubmissionsCount": 0
+    },
+    "adminPasswordHash": "0ae7fb5f61f2ce9c491c0ef39a7d21d0de42749714dc9f496beaa76d69caa09a",
+    "feedbackLog": [],
+    "services": [
+      "Luxury Buffet Spread",
+      "Live Piano Music",
+      "Continental & Indian Cuisine",
+      "High-End Hospitality",
+      "Dessert & Pastry Counter"
+    ],
+    "rating": 5,
+    "reviewCount": 100,
+    "placeId": "",
+    "createdAt": "2026-10-22T18:00:52.898Z",
+    "updatedAt": "2026-10-22T18:00:52.898Z"
+  },
+  {
+    "businessId": "royal-spices-dry-fruits-3be1d4",
+    "businessName": "Royal Spices & Dry Fruits",
+    "city": "Ahmedabad, GJ",
+    "category": "Food, Beverage & Grocery",
+    "googleReviewUrl": "https://maps.app.goo.gl/exampleSpices",
+    "shortUrl": "https://revgoa.in/r/royal-spices-dry-fruits-3be1d4",
+    "analytics": {
+      "scansCount": 0,
+      "positiveClicksCount": 0,
+      "negativeSubmissionsCount": 0
+    },
+    "adminPasswordHash": "07b391a216f8ab4305fdc64907493d3cb1da0bd928ca04ed3f4bb252f9529291",
+    "feedbackLog": [],
+    "services": [
+      "Quality Service",
+      "Friendly Staff",
+      "Great Experience"
+    ],
+    "rating": 5,
+    "reviewCount": 100,
+    "placeId": "",
+    "createdAt": "2026-10-22T17:46:34.991Z",
+    "updatedAt": "2026-10-22T17:55:38.989Z"
+  },
+  {
+    "businessId": "grey-gents-clothing-store",
+    "businessName": "Grey Gents clothing store",
+    "city": "Bodakdev, Ahmedabad, Gujarat",
+    "category": "Clothing, Fashion & Boutique",
+    "googleReviewUrl": "https://search.google.com/local/writereview?placeid=ChIJyRyiLwCbXjkRY1eZ6K4ZF0M",
+    "shortUrl": "https://revgoat-business-pro.vercel.app/r/grey-gents-clothing-store",
+    "analytics": {
+      "scansCount": 144,
+      "positiveClicksCount": 100,
+      "negativeSubmissionsCount": 5
+    },
+    "adminPasswordHash": "0ae7fb5f61f2ce9c491c0ef39a7d21d0de42749714dc9f496beaa76d69caa09a",
+    "feedbackLog": [
+      {
+        "id": "fb-mvjrf3wq-ae09",
+        "text": "Music was slightly loud near table 4.",
+        "stars": 2,
+        "customerName": "Rohan K.",
+        "customerPhone": "",
+        "date": "2026-10-22T16:32:54.410Z"
+      },
+      {
+        "id": "fb-mvjrf2eg-8fec",
+        "text": "Music was slightly loud near table 4.",
+        "stars": 2,
+        "customerName": "Rohan K.",
+        "customerPhone": "",
+        "date": "2026-10-22T16:32:52.456Z"
+      },
+      {
+        "id": "fb-1",
+        "text": "The soup was a bit lukewarm when served on Sunday evening, though the buffet was overall pleasant.",
+        "stars": 3,
+        "date": "2026-10-20T16:28:55.614Z"
+      },
+      {
+        "id": "fb-2",
+        "text": "Waiting time for table was around 20 minutes despite advance booking.",
+        "stars": 2,
+        "date": "2026-10-17T16:28:55.615Z"
+      }
+    ],
+    "services": [
+      "Custom Fit Suits",
+      "Italian Fabric",
+      "Wedding Sherwanis",
+      "Designer Blazers"
+    ],
+    "rating": 5,
+    "reviewCount": 100,
+    "createdAt": "2026-09-22T16:28:55.615Z",
+    "updatedAt": "2026-10-22T18:10:02.161Z",
+    "placeId": "ChIJyRyiLwCbXjkRY1eZ6K4ZF0M"
+  },
+  {
+    "businessId": "grey-gents",
+    "businessName": "Grey Gents - The Luxury Clothing Store",
+    "city": "Navrangpura, Ahmedabad, Gujarat",
+    "category": "Clothing, Fashion & Boutique",
+    "googleReviewUrl": "https://search.google.com/local/writereview?placeid=ChIJyRyiLwCbXjkRY1eZ6K4ZF0M",
+    "shortUrl": "https://revgoat-business-pro.vercel.app/r/grey-gents",
+    "analytics": {
+      "scansCount": 98,
+      "positiveClicksCount": 85,
+      "negativeSubmissionsCount": 2
+    },
+    "adminPasswordHash": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+    "feedbackLog": [],
+    "services": [
+      "Custom Fit Suits",
+      "Italian Fabric",
+      "Wedding Sherwanis",
+      "Designer Blazers"
+    ],
+    "rating": 4.9,
+    "reviewCount": 1840,
+    "placeId": "ChIJyRyiLwCbXjkRY1eZ6K4ZF0M"
+  },
+  {
+    "businessId": "grey-gents-clothing",
+    "businessName": "Grey Gents - The Luxury Clothing Store",
+    "city": "Navrangpura, Ahmedabad, Gujarat",
+    "category": "Clothing, Fashion & Boutique",
+    "googleReviewUrl": "https://search.google.com/local/writereview?placeid=ChIJyRyiLwCbXjkRY1eZ6K4ZF0M",
+    "shortUrl": "https://revgoat-business-pro.vercel.app/r/grey-gents-clothing",
+    "analytics": {
+      "scansCount": 92,
+      "positiveClicksCount": 78,
+      "negativeSubmissionsCount": 5
+    },
+    "adminPasswordHash": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+    "feedbackLog": [
+      {
+        "id": "fb-mvjudilj-b541",
+        "text": "Delay in suit tailoring",
+        "stars": 2,
+        "customerName": "Vikas Patel",
+        "customerPhone": "9876543210",
+        "date": "2026-10-22T17:55:38.984Z"
+      },
+      {
+        "id": "fb-mvjudh2a-f9e3",
+        "text": "Delay in suit tailoring",
+        "stars": 2,
+        "customerName": "Vikas Patel",
+        "customerPhone": "9876543210",
+        "date": "2026-10-22T17:55:36.995Z"
+      },
+      {
+        "id": "fb-mvju9x5c-29a9",
+        "text": "Delay in suit tailoring",
+        "stars": 2,
+        "customerName": "Vikas Patel",
+        "customerPhone": "9876543210",
+        "date": "2026-10-22T17:52:51.216Z"
+      },
+      {
+        "id": "fb-mvju9vd5-1d59",
+        "text": "Delay in suit tailoring",
+        "stars": 2,
+        "customerName": "Vikas Patel",
+        "customerPhone": "9876543210",
+        "date": "2026-10-22T17:52:48.905Z"
+      },
+      {
+        "id": "fb-3",
+        "text": "Need more size variations in slim-fit formal shirts.",
+        "stars": 3,
+        "date": "2026-10-21T16:28:55.615Z"
+      }
+    ],
+    "services": [
+      "Custom Fit Suits",
+      "Italian Fabric",
+      "Wedding Sherwanis",
+      "Designer Blazers"
+    ],
+    "rating": 4.9,
+    "reviewCount": 1840,
+    "createdAt": "2026-09-07T16:28:55.615Z",
+    "updatedAt": "2026-10-22T17:55:38.984Z"
+  }
+]
